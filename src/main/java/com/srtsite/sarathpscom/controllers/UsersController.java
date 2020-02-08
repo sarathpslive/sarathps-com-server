@@ -33,9 +33,8 @@ public class UsersController {
         try {
             Users savedUser = userRepository.saveAndFlush(user);
             return savedUser.getUsername();
-
         } catch (DataAccessException er) {
-            return er.getLocalizedMessage();
+            return "username or email  exist";
         }
 
     }
